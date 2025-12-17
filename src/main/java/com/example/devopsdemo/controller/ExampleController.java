@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,7 +20,7 @@ public class ExampleController {
         modelAndView.setViewName("index");
 
         modelAndView.addObject("appName", "🚀 DevOps Demo v1.0");
-        modelAndView.addObject("currentTime", LocalDateTime.now().toString());
+        modelAndView.addObject("currentTime", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
         modelAndView.addObject("pipelineStatus", "SUCCESS");
         modelAndView.addObject("deployedVia", "GitHub Actions -> Docker -> Render Cloud");
 
