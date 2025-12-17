@@ -1,0 +1,33 @@
+name: 🚀 Deploy DevOps Demo
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+
+      - name: ☕ Setup Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+
+      - name: 🔨 Build with Maven
+        run: mvn clean package -DskipTests
+
+      - name: 🐳 Build Docker Image
+        run: docker build -t devops-demo:latest .
+
+      - name: ✅ Demo completed successfully
+        run: |
+          echo "🎉 PIPELINE SUCCESSFUL!"
+          echo "📦 Created image: devops-demo:latest"
+          echo "🌍 For cloud deployment the next steps would be:"
+          echo "   1. docker push to registry"
+          echo "   2. docker run in cloud/kubernetes"
+          echo "   3. Application is live at URL"

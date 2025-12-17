@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DevOps Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .status-box { background: #f0f8ff; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .success { color: green; font-weight: bold; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 th:text="${appName}">DevOps Demo</h1>
+    <p>This application demonstrates a complete DevOps cycle:</p>
+
+    <div class="status-box">
+        <h3>📊 System Status</h3>
+        <p><strong>Server Time:</strong> <span th:text="${currentTime}"></span></p>
+        <p><strong>Pipeline Status:</strong> <span class="success" th:text="${pipelineStatus}"></span></p>
+        <p><strong>Deployed via:</strong> <span th:text="${deployedVia}"></span></p>
+    </div>
+
+    <h3>🔧 How this demo works:</h3>
+    <ol>
+        <li>Code change is committed to Git</li>
+        <li>GitHub Actions automatically starts the pipeline</li>
+        <li>Docker image is created</li>
+        <li>Image is deployed to the cloud</li>
+        <li>This page updates automatically!</li>
+    </ol>
+
+    <p><a href="/api/health" target="_blank">🔗 Check API health endpoint</a></p>
+</div>
+</body>
+</html>
