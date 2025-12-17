@@ -21,7 +21,7 @@ public class ExampleController {
         modelAndView.addObject("appName", "🚀 DevOps Demo v1.0");
         modelAndView.addObject("currentTime", LocalDateTime.now().toString());
         modelAndView.addObject("pipelineStatus", "SUCCESS");
-        modelAndView.addObject("deployedVia", "GitHub Actions -> Docker -> Cloud");
+        modelAndView.addObject("deployedVia", "GitHub Actions -> Docker -> Render Cloud");
 
         return modelAndView;
     }

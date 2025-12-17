@@ -1,37 +1,150 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DevOps Demo</title>
-    <style>
-        body { font-family: Arial, sans-serif; padding: 40px; }
-        .container { max-width: 800px; margin: 0 auto; }
-        .status-box { background: #f0f8ff; padding: 20px; border-radius: 10px; margin: 20px 0; }
-        .success { color: green; font-weight: bold; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 DevOps Pipeline Demo</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<div class="container">
-    <h1 th:text="${appName}">DevOps Demo</h1>
-    <p>This application demonstrates a complete DevOps cycle:</p>
+<header class="header">
+    <div class="container">
+        <h1><i class="fas fa-rocket"></i> DevOps Pipeline Live Demo</h1>
+        <p class="tagline">From Code Commit to Cloud Deployment - Fully Automated</p>
+    </div>
+</header>
 
-    <div class="status-box">
-        <h3>📊 System Status</h3>
-        <p><strong>Server Time:</strong> <span th:text="${currentTime}"></span></p>
-        <p><strong>Pipeline Status:</strong> <span class="success" th:text="${pipelineStatus}"></span></p>
-        <p><strong>Deployed via:</strong> <span th:text="${deployedVia}"></span></p>
+<main class="container">
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Your Application is <span class="highlight">Live!</span></h2>
+            <p>This Spring Boot application was containerized and deployed automatically through a CI/CD pipeline.</p>
+            <div class="tech-badges">
+                <span class="badge java"><i class="fab fa-java"></i> Java 17</span>
+                <span class="badge spring"><i class="fas fa-leaf"></i> Spring Boot</span>
+                <span class="badge docker"><i class="fab fa-docker"></i> Docker</span>
+                <span class="badge github"><i class="fab fa-github"></i> GitHub Actions</span>
+                <span class="badge cloud"><i class="fas fa-cloud"></i> Render</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="dashboard">
+        <div class="dashboard-card status">
+            <h3><i class="fas fa-heartbeat"></i> System Status</h3>
+            <div class="status-item">
+                <span class="label">Application</span>
+                <span class="value success"><i class="fas fa-check-circle"></i> <span th:text="${appName}">DevOps Demo</span></span>
+            </div>
+            <div class="status-item">
+                <span class="label">Deployment Status</span>
+                <span class="value success"><i class="fas fa-check-circle"></i> <span th:text="${pipelineStatus}">SUCCESS</span></span>
+            </div>
+            <div class="status-item">
+                <span class="label">Server Time</span>
+                <span class="value"><i class="far fa-clock"></i> <span th:text="${currentTime}">Timestamp</span></span>
+            </div>
+            <div class="status-item">
+                <span class="label">Deployment Method</span>
+                <span class="value"><i class="fas fa-code-branch"></i> <span th:text="${deployedVia}">CI/CD Pipeline</span></span>
+            </div>
+        </div>
+
+        <div class="dashboard-card pipeline">
+            <h3><i class="fas fa-project-diagram"></i> Pipeline Stages</h3>
+            <div class="pipeline-steps">
+                <div class="step active">
+                    <div class="step-icon">1</div>
+                    <div class="step-content">
+                        <h4>Code Commit</h4>
+                        <p>Developer pushes code to GitHub repository</p>
+                    </div>
+                </div>
+                <div class="step active">
+                    <div class="step-icon">2</div>
+                    <div class="step-content">
+                        <h4>CI/CD Trigger</h4>
+                        <p>GitHub Actions workflow starts automatically</p>
+                    </div>
+                </div>
+                <div class="step active">
+                    <div class="step-icon">3</div>
+                    <div class="step-content">
+                        <h4>Build & Test</h4>
+                        <p>Maven compiles code, runs tests</p>
+                    </div>
+                </div>
+                <div class="step active">
+                    <div class="step-icon">4</div>
+                    <div class="step-content">
+                        <h4>Containerization</h4>
+                        <p>Docker image is built and tagged</p>
+                    </div>
+                </div>
+                <div class="step active">
+                    <div class="step-icon">5</div>
+                    <div class="step-content">
+                        <h4>Cloud Deployment</h4>
+                        <p>Image deployed to Render cloud platform</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <h3>🔧 How this demo works:</h3>
-    <ol>
-        <li>Code change is committed to Git</li>
-        <li>GitHub Actions automatically starts the pipeline</li>
-        <li>Docker image is created</li>
-        <li>Image is deployed to the cloud</li>
-        <li>This page updates automatically!</li>
-    </ol>
+    <section class="info-section">
+        <h3><i class="fas fa-cogs"></i> Technical Details</h3>
+        <div class="info-grid">
+            <div class="info-card">
+                <h4><i class="fas fa-code"></i> Backend</h4>
+                <ul>
+                    <li>Spring Boot 4</li>
+                    <li>Java 17 (Eclipse Temurin)</li>
+                    <li>Maven for dependency management</li>
+                    <li>REST API with health endpoint</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h4><i class="fas fa-shipping-fast"></i> DevOps Toolchain</h4>
+                <ul>
+                    <li>GitHub for version control</li>
+                    <li>GitHub Actions for CI/CD</li>
+                    <li>Docker for containerization</li>
+                    <li>Render.com for cloud hosting</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h4><i class="fas fa-bolt"></i> DevOps Principles Demonstrated</h4>
+                <ul>
+                    <li>Infrastructure as Code (Dockerfile)</li>
+                    <li>Continuous Integration</li>
+                    <li>Continuous Deployment</li>
+                    <li>Automated Testing</li>
+                    <li>Monitoring & Observability</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-    <p><a href="/api/health" target="_blank">🔗 Check API health endpoint</a></p>
-</div>
+    <div class="action-buttons">
+        <a th:href="@{/api/health}" class="btn btn-primary" target="_blank">
+            <i class="fas fa-stethoscope"></i> Check API Health
+        </a>
+        <a href="https://github.com" class="btn btn-secondary" target="_blank">
+            <i class="fab fa-github"></i> View Source Code
+        </a>
+        <a href="https://render.com" class="btn btn-outline" target="_blank">
+            <i class="fas fa-cloud"></i> Render Dashboard
+        </a>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>DevOps Pipeline Demo | Created for University Project "Agile und DevOps als Innovationstreiber"</p>
+        <p class="footer-note">This page updates automatically with each deployment. Last update: <span th:text="${currentTime}"></span></p>
+    </div>
+</footer>
 </body>
 </html>
