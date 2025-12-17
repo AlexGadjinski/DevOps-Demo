@@ -2,7 +2,7 @@ name: 🚀 Deploy DevOps Demo
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build-and-deploy:
@@ -14,7 +14,7 @@ jobs:
       - name: ☕ Setup Java
         uses: actions/setup-java@v3
         with:
-          java-version: '11'
+          java-version: '17'
           distribution: 'temurin'
 
       - name: 🔨 Build with Maven
